@@ -3,7 +3,8 @@ import {Layout} from "../components/layout";
 
 const IndexPage = () => (
   <Layout>
-    Home
+    This is my personal website with blog. At the moment it's pretty empty. Check About tab for details about me 
+    and contact info
   </Layout>
 )
 
