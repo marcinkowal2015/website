@@ -1,25 +1,34 @@
 import React from "react";
 import {Layout} from "../components/layout";
 import { graphql } from "gatsby";
+import {Link} from "gatsby";
 
 export default function Blog({data}) {
-    console.warn(data)
+    const blogList = data.allMarkdownRemark.edges
+    .map(x => ({id: x.node.id, ...x.node.frontmatter}))
+    .map(b => {
+      return (<li key={b.id}><Link to={b.path}>{b.title}</Link></li>)
+    });
     return (
     <Layout>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+        <h1>Migrating JavaScript to TypeScript</h1>
+        <ul>{blogList}</ul>
     </Layout>);
 }
 
 export const pageQuery = graphql`
   query {
-    markdownRemark {
-      html
-      frontmatter {
-          date
-          path
-          title
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            path
+            title
+          }
+        }
       }
     }
   }
-`
+`;
