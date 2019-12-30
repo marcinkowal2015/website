@@ -6,7 +6,7 @@ title: "Migrating JavaScript to TypeScript part 1"
 
 In this serie of articles I will show how to rewrite JavaScript code, written in ES5 to TypeScript.
 
-Before classes were available in JavaScript, people used constructor functions to achieve similar behavior as was possible with classes in languages like C# and Java. An example of such 'JavaScript class' could look like:
+Before classes were available in JavaScript, people used constructor functions to achieve similar behavior as it was possible with classes in languages like C# and Java. An example of such 'JavaScript class' could look like:
 
 ``` js
 function Logger(name) {
@@ -34,7 +34,7 @@ myLogger.logWithName("foo"); //console output -> testing logger: foo
 myLogger.logWithoutName("bar"); //console output -> bar 
 ```
 
-In this example we have a constructor function(class) which takes one argument, and have 3 properties. One string property, which is name and 3 functions, one defined inside constructor function and two of them defined on prototype.
+In this example we have a constructor function(class) which takes one argument, and have 3 properties. One string property and 3 functions, one defined inside constructor function and two of them defined on prototype.
 
 As a first step, lets focus on just constructor function, we will get back to prototype later. Our constructor function in TypeScript can be defined as a class, so let's write class definition for a Logger:
 

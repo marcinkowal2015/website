@@ -7,12 +7,15 @@ const IndexPage = ({data}: any) => {
   const recentBlogList = data.allMarkdownRemark.edges
     .map(x => ({id: x.node.id, ...x.node.frontmatter}))
     .map(b => {
-      return (<li key={b.id}><Link to={b.path}>{b.title}</Link></li>)
+      return (
+      <li key={b.id}>
+        <Link css={{textDecoration: "none", color: "#D36AC2"}} to={b.path}>{b.title}</Link>
+      </li>);
     });
   return (
     <Layout>
-      <h1>Recent articles</h1>
-      <ul>
+      <h2>Recent articles</h2>
+      <ul css={{listStyleType: "square", textDecoration: "none"}}>
         {recentBlogList}
       </ul>
     </Layout>

@@ -7,11 +7,14 @@ export default function Blog({data}) {
     const blogList = data.allMarkdownRemark.edges
     .map(x => ({id: x.node.id, ...x.node.frontmatter}))
     .map(b => {
-      return (<li key={b.id}><Link to={b.path}>{b.title}</Link></li>)
+      return (
+      <li key={b.id}>
+          <Link css={{textDecoration: "none", color: "#D36AC2"}} to={b.path}>{b.title}</Link>
+      </li>);
     });
     return (
     <Layout>
-        <h1>Migrating JavaScript to TypeScript</h1>
+        <h2>Migrating JavaScript to TypeScript</h2>
         <ul>{blogList}</ul>
     </Layout>);
 }

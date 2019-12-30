@@ -33,6 +33,7 @@ export function Layout(props) {
                 height: 100vh;
                 padding: 20px 10%;
                 box-sizing: border-box;
+                overflow: none;
                 @media(max-width: 600px) {
                     padding: 0;
                 }`}>

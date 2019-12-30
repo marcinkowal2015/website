@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 export default function Blog({data}) {
     return (
     <Layout>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <h2>{data.markdownRemark.frontmatter.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
     </Layout>);
 }

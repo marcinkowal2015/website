@@ -1,9 +1,6 @@
 import React, {FC} from "react";
 import {Layout} from "../components/layout";
-
-const StyledA: FC<{href: string}> = ({href, children}) => (
-    <a css={{textDecoration: "none", color: "#D36AC2"}} href={href}>{children}</a>
-)
+import {StyledA} from "../components/styledA";
 
 export default function About() {
     return (
