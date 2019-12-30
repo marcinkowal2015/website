@@ -12,7 +12,7 @@ export default function About() {
                 I live in Cracow, Poland. I am software developer writting mostly in JavaScript, TypeScript and C#.
                 In my spare time I like playing chess, dancing and improve my software development skills focusing on
                 web development.
-                Currently I am working as Software Developer in Medius Poland.
+                Currently I am working as Software Developer for Medius.
             </div>
             <div css={{fontWeight: "bold", fontSize:"28px", padding: "10px 0"}}>
                 Contact
